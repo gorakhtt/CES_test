@@ -1,0 +1,41 @@
+<div class="page">
+    <div class="pageHeader">
+        <div class="title">Dashboard</div>
+        <div class="userPanel"><i class="fa fa-chevron-down"></i><span class="username"> <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+            <ul *ngIf="users">
+                <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+            </ul> </span><img
+                src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/73.jpg" width="40" height="40" /></div>
+    </div>
+    <div class="main">
+        <div class="nav">
+
+            <div class="menu">
+
+                <ul>
+                    <li> <i class="fa fa-home"></i>Home</li>
+                    <li><i class="fa fa-signal"></i>Profile Chart</li>
+                    <li class="d-flex align-items-center"><i class="fa fa-sign-out" (click)="logout()"></i><a class="nav-item nav-link p-0" (click)="logout()">Logout</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="view">
+            <div class="d-flex align-items-center">
+                <button mat-raised-button color="primary" class="mx-3" (click)="createChart()">Create a new chart
+                    !</button>
+                <button mat-raised-button color="primary" class="mx-3"
+                    (click)="createCustomChart(myCustomOptions)">Create a custom chart !</button>
+
+                <button mat-raised-button color="primary" class="mx-3" (click)="rmFirst()">Remove  Chart</button>
+                
+            </div>
+
+            <div class="content">
+                <div class="card mt-4">
+                    <div #charts id="test"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
